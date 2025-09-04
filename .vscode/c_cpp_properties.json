@@ -1,0 +1,7 @@
+{
+  "includePath": [
+    "/opt/ros/jazzy/include/**",
+    "/home/tyrhaton/Projects/les_ws/install/my_interfaces/include/**",
+    "/usr/include/**"
+  ]
+}
