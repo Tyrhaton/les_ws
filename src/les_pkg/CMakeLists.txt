@@ -12,14 +12,15 @@ find_package(ament_cmake REQUIRED)
 # find_package(<dependency> REQUIRED)
 
 find_package(rclcpp REQUIRED)
-find_package(rclcpp_action REQUIRED)   # nodig als er een actionserver node wordt gemaakt 
+find_package(rclcpp_action REQUIRED) # nodig als er een actionserver node wordt gemaakt 
 
-find_package(std_msgs REQUIRED)        # gebruik maken von standaard messages
+find_package(std_msgs REQUIRED) # gebruik maken von standaard messages
 # find_package(templates_interfaces REQUIRED)   # gebruik maken van project messages 
 
 
 ## 1 new line name of executalbe use the program name !
-add_executable(template_general src/template_general.cpp) 
+add_executable(template_general src/template_general.cpp)
+add_executable(clock src/clock.cpp)
 # add_executable(template_walltimer src/template_walltimer.cpp) 
 # add_executable(template_publisher src/template_publisher.cpp) 
 # add_executable(template_subscriber src/template_subscriber.cpp) 
@@ -30,7 +31,8 @@ add_executable(template_general src/template_general.cpp)
 
 
 ## 2 new line meaning that this program needs rclcpp
-ament_target_dependencies(template_general rclcpp  )
+ament_target_dependencies(template_general rclcpp)
+ament_target_dependencies(clock rclcpp)
 # ament_target_dependencies(template_walltimer rclcpp  ) 
 # ament_target_dependencies(template_publisher rclcpp std_msgs) 
 # ament_target_dependencies(template_subscriber rclcpp std_msgs) 
@@ -40,17 +42,18 @@ ament_target_dependencies(template_general rclcpp  )
 # ament_target_dependencies(template_actionclient rclcpp rclcpp_action templates_interfaces ) 
 
 ## new 3 get 
-install (TARGETS
-	  template_general
-          # template_walltimer
-          # template_publisher
-          # template_subscriber
-          # template_serviceserver
-          # template_serviceclient
-          # template_actionserver
-          # template_actionclient
-          DESTINATION lib/${PROJECT_NAME}
-          )
+install(TARGETS
+  template_general
+  clock
+  # template_walltimer
+  # template_publisher
+  # template_subscriber
+  # template_serviceserver
+  # template_serviceclient
+  # template_actionserver
+  # template_actionclient
+  DESTINATION lib/${PROJECT_NAME}
+)
 
 
 
