@@ -1,19 +1,17 @@
 /*
 --Node description:
 ...what the node is doing (functionally)...
-When node is created the node prints "Hello you are new to ROS2" on terminal,
-further it does nothing more than being alive
+
 */
 
 /*
 --Software changes:
 one line per change
-(1) created 31.3.2025: developer-Tilmann Koster reviewer(s)-Niek Ottens
-(2) changed 01.4.2025: xxx functionality added ... : developer-Tilmann Koster reviewer(s)-Niek Ottens
+(1) created DD.MM.YYYY: developer-Tycho Mallee reviewer(s)-
 ...
 */
 
-//-- tester: Sander Gieling
+//-- tester:
 
 //--general includes
 #include <cstdlib>
@@ -22,10 +20,8 @@ one line per change
 #include "rclcpp/time.hpp"
 
 //--custom includes
-//...
 
 //--using
-//...
 
 //--Node class
 
@@ -37,15 +33,12 @@ public:
     {
         //--communication and timer objects:
         // see templates for subcribers, action server ...
-        //...
 
         //--customs functions:
         print_time();
-        //...
     }
 
     //-- communication and timer functions
-    //...
 
     //--customs functions:
     void print_time()
@@ -57,15 +50,13 @@ public:
 
     //--custom variables:
 
-    rclcpp::Time my_time_;
-    rclcpp::Clock my_clock_;
-
 private:
     //--rclcpp variables:
-    // ...
 
     //--custom variables:
-    //...
+
+    rclcpp::Time my_time_;
+    rclcpp::Clock my_clock_;
 };
 
 int main(int argc, char *argv[])
