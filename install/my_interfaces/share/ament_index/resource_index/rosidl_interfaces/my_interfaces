@@ -1,2 +1,4 @@
 msg/HardwareStatus.idl
 msg/HardwareStatus.msg
+srv/TemplateS.idl
+srv/TemplateS.srv

@@ -25,7 +25,7 @@ add_executable(clock src/clock.cpp)
 add_executable(template_walltimer src/template_walltimer.cpp)
 add_executable(template_publisher src/template_publisher.cpp)
 add_executable(template_subscriber src/template_subscriber.cpp)
-#add_executable(template_serviceserver src/template_serviceserver.cpp) 
+add_executable(template_serviceserver src/template_serviceserver.cpp)
 #add_executable(template_serviceclient src/template_serviceclient.cpp)
 #add_executable(template_actionserver src/template_actionserver.cpp)
 #add_executable(template_actionclient src/template_actionclient.cpp)
@@ -37,10 +37,10 @@ ament_target_dependencies(clock rclcpp)
 ament_target_dependencies(template_walltimer rclcpp)
 ament_target_dependencies(template_publisher rclcpp std_msgs geometry_msgs my_interfaces)
 ament_target_dependencies(template_subscriber rclcpp std_msgs geometry_msgs my_interfaces)
-#ament_target_dependencies(template_serviceserver rclcpp std_msgs templates_interfaces ) 
-#ament_target_dependencies(template_serviceclient rclcpp std_msgs templates_interfaces ) 
-#ament_target_dependencies(template_actionserver rclcpp rclcpp_action templates_interfaces ) 
-#ament_target_dependencies(template_actionclient rclcpp rclcpp_action templates_interfaces ) 
+ament_target_dependencies(template_serviceserver rclcpp std_msgs my_interfaces)
+#ament_target_dependencies(template_serviceclient rclcpp std_msgs my_interfaces ) 
+#ament_target_dependencies(template_actionserver rclcpp rclcpp_action my_interfaces ) 
+#ament_target_dependencies(template_actionclient rclcpp rclcpp_action my_interfaces ) 
 
 ## new 3 get 
 install(TARGETS
@@ -49,7 +49,7 @@ install(TARGETS
   template_walltimer
   template_publisher
   template_subscriber
-  #template_serviceserver
+  template_serviceserver
   #template_serviceclient
   # template_actionserver
   #template_actionclient

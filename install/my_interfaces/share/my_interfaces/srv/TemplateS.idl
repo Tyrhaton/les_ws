@@ -1,0 +1,21 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from my_interfaces/srv/TemplateS.srv
+// generated code does not contain a copyright notice
+
+
+module my_interfaces {
+  module srv {
+    @verbatim (language="comment", text=
+      "some comment ")
+    struct TemplateS_Request {
+      @verbatim (language="comment", text=
+        "some comment")
+      string sname;
+    };
+    struct TemplateS_Response {
+      @verbatim (language="comment", text=
+        "some comment")
+      int64 snumber;
+    };
+  };
+};

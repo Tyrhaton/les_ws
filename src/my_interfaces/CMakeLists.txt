@@ -14,6 +14,7 @@ find_package(rosidl_default_generators REQUIRED)
 rosidl_generate_interfaces(${PROJECT_NAME}
   # we will add the name of our custom interfaces here
   "msg/HardwareStatus.msg"
+  "srv/TemplateS.srv"
 )
 ament_export_dependencies(rosidl_default_runtime)
 
