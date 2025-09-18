@@ -1,3 +1,5 @@
+action/TemplateA.action
+action/TemplateA.idl
 msg/HardwareStatus.idl
 msg/HardwareStatus.msg
 srv/TemplateS.idl

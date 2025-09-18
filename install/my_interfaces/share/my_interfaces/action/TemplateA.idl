@@ -1,0 +1,18 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from my_interfaces/action/TemplateA.action
+// generated code does not contain a copyright notice
+
+
+module my_interfaces {
+  module action {
+    struct TemplateA_Goal {
+      string gname;
+    };
+    struct TemplateA_Result {
+      int64 rnumber;
+    };
+    struct TemplateA_Feedback {
+      int64 fnumber;
+    };
+  };
+};

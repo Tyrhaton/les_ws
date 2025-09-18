@@ -16,6 +16,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/HardwareStatus.msg"
   "srv/TemplateS.srv"
   "srv/VectorXyz.srv"
+  "action/TemplateA.action"
 )
 ament_export_dependencies(rosidl_default_runtime)
 
