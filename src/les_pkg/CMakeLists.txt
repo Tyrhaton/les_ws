@@ -27,7 +27,8 @@ add_executable(template_publisher src/template_publisher.cpp)
 add_executable(template_subscriber src/template_subscriber.cpp)
 add_executable(template_serviceserver src/template_serviceserver.cpp)
 add_executable(vector_length src/vector_length.cpp)
-#add_executable(template_serviceclient src/template_serviceclient.cpp)
+add_executable(template_serviceclient src/template_serviceclient.cpp)
+add_executable(template_serviceclientb src/template_serviceclientB.cpp)
 #add_executable(template_actionserver src/template_actionserver.cpp)
 #add_executable(template_actionclient src/template_actionclient.cpp)
 
@@ -40,7 +41,8 @@ ament_target_dependencies(template_publisher rclcpp std_msgs geometry_msgs my_in
 ament_target_dependencies(template_subscriber rclcpp std_msgs geometry_msgs my_interfaces)
 ament_target_dependencies(template_serviceserver rclcpp std_msgs my_interfaces)
 ament_target_dependencies(vector_length rclcpp std_msgs my_interfaces)
-#ament_target_dependencies(template_serviceclient rclcpp std_msgs my_interfaces ) 
+ament_target_dependencies(template_serviceclient rclcpp std_msgs my_interfaces ) 
+ament_target_dependencies(template_serviceclientb rclcpp std_msgs my_interfaces ) 
 #ament_target_dependencies(template_actionserver rclcpp rclcpp_action my_interfaces ) 
 #ament_target_dependencies(template_actionclient rclcpp rclcpp_action my_interfaces ) 
 
@@ -53,7 +55,8 @@ install(TARGETS
   template_subscriber
   template_serviceserver
   vector_length
-  #template_serviceclient
+  template_serviceclient
+  template_serviceclientb
   # template_actionserver
   #template_actionclient
   DESTINATION lib/${PROJECT_NAME}

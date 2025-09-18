@@ -11,9 +11,9 @@ Node description: Service server that calculates the length of a vector (x, y, z
 */ 
 
 #include "rclcpp/rclcpp.hpp"
-#include "my_interfaces/srv/template_sm.hpp"
+#include "my_interfaces/srv/vector_xyz.hpp"
 
-using TemplateSm = my_interfaces::srv::TemplateSm;
+using VectorXyz = my_interfaces::srv::VectorXyz;
 using namespace std::placeholders;
 
 class TemplateServiceServer : public rclcpp::Node
@@ -21,13 +21,13 @@ class TemplateServiceServer : public rclcpp::Node
 public:
   TemplateServiceServer() : Node("vector_length_service_node")
   {
-    template_serviceserver_ = this->create_service<TemplateSm>(
+    template_serviceserver_ = this->create_service<VectorXyz>(
       "vector_length_service",
       std::bind(&TemplateServiceServer::callBackTemplateS, this, _1, _2));
     RCLCPP_INFO(this->get_logger(), "Service Server started");
   }
 
-  void callBackTemplateS(const TemplateSm::Request::SharedPtr request, const TemplateSm::Response::SharedPtr response)
+  void callBackTemplateS(const VectorXyz::Request::SharedPtr request, const VectorXyz::Response::SharedPtr response)
   {
     // Calculate vector length
     double x = request->x;
@@ -38,7 +38,7 @@ public:
   }
 
 private:
-  rclcpp::Service<TemplateSm>::SharedPtr template_serviceserver_;
+  rclcpp::Service<VectorXyz>::SharedPtr template_serviceserver_;
 };
 
 int main(int argc, char * argv[])

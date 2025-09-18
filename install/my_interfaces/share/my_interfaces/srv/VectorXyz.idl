@@ -1,0 +1,19 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from my_interfaces/srv/VectorXyz.srv
+// generated code does not contain a copyright notice
+
+
+module my_interfaces {
+  module srv {
+    struct VectorXyz_Request {
+      double x;
+
+      double y;
+
+      double z;
+    };
+    struct VectorXyz_Response {
+      double length;
+    };
+  };
+};
