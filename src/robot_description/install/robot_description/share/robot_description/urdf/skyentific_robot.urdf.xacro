@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<robot name="skyentific_robot"
+    xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <!-- Include ros2_control Plugins -->
+    <xacro:include filename="$(find robot_description)/urdf/skyentific_robot_ros2_control.xacro" />
+    <!-- Useful XACRO Variables (Properties) -->
+    <xacro:property name="PI" value="3.14159265359" />
+    <material name="grey">
+        <color rgba="0.5 0.5 0.5 1.0" />
+    </material>
+    <material name="red">
+        <color rgba="0.5 0.0 0.0 1.0" />
+    </material>
+
+    <link name="base_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="file://$(find robot_description)/meshes/base_z_ob.stl"
+                    scale="0.001 0.001 0.001" />
+            </geometry>
+            <material name="grey" />
+        </visual>
+        <collision> <!-- cyclinder equivalent -->
+            <origin xyz="0 0 0.075" rpy="0 0 0" />
+            <geometry>
+                <cylinder radius="0.1" length="0.15" />
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="link_1">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="file://$(find robot_description)/meshes/link_1.stl"
+                    scale="0.001 0.001 0.001" />
+            </geometry>
+            <material name="grey" />
+        </visual>
+        <collision>
+            <origin xyz="0 0 0.150" rpy="1.57 0 0" />
+            <geometry>
+                <cylinder radius="0.095" length="0.1" />
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="joint_1" type="revolute">
+        <parent link="base_link" />
+        <child link="link_1" />
+        <origin xyz="0 0 0.0965" rpy="0 0 0" />
+        <axis xyz="0 0 1" />
+        <limit effort="1000.0" velocity="100.0"
+            lower="-3.14" upper="3.14" />
+    </joint>
+
+</robot>
