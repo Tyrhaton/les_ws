@@ -1,1 +1,1 @@
-rviz2 config file
+/home/tyrhaton/Projects/les_ws/src/robot_description/rviz/readme.md

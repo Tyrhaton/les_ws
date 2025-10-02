@@ -1,2 +1,1 @@
-source;share/robot_moveit_config/environment/ament_prefix_path.sh
-source;share/robot_moveit_config/environment/path.sh
+/home/tyrhaton/Projects/les_ws/build/robot_moveit_config/ament_cmake_environment_hooks/local_setup.dsv

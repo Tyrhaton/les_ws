@@ -1,17 +1,77 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:arg name="use_mock_component" default="true"/>
+  <xacro:arg name="use_moveit_control" default="false"/>
+
+  <!-- Only include this ros2_control block when not using MoveIt (which has its own) -->
+  <xacro:unless value="$(arg use_moveit_control)">
     <ros2_control name="Arm" type="system">
-        ...
-</ros2_control>
-    <ros2_control name="Gripper" type="system">
-        <hardware>
-            <plugin>mock_components/GenericSystem</plugin>
-        </hardware>
-        <joint name="joint_6">
-            <command_interface name="position" />
-            <state_interface name="position">
-                <param name="initial_value">0.0</param>
-            </state_interface>
-        </joint>
+      <hardware>
+        <xacro:if value="$(arg use_mock_component)">
+          <plugin>mock_components/GenericSystem</plugin>
+        </xacro:if>
+        <xacro:unless value="$(arg use_mock_component)">
+          <plugin>arm_hardware/ArmHardwareInterface</plugin>
+          <param name="port">/dev/ttyACM0</param>
+          <param name="baudrate">57600</param>
+          <param name="motor_id_1">1</param>
+          <param name="motor_id_2">2</param>
+          <param name="motor_id_3">3</param>
+          <param name="motor_id_4">4</param>
+          <param name="motor_id_5">5</param>
+          <param name="steps_per_rev">200.0</param>
+          <param name="hex_dump">false</param>
+          <param name="probe">false</param>
+          <param name="protocol">register</param>
+        </xacro:unless>
+      </hardware>
+
+      <joint name="joint_1">
+        <command_interface name="position"/>
+        <state_interface name="position">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+      </joint>
+
+      <joint name="joint_2">
+        <command_interface name="position"/>
+        <state_interface name="position">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+      </joint>
+
+      <joint name="joint_3">
+        <command_interface name="position"/>
+        <state_interface name="position">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+      </joint>
+
+      <joint name="joint_4">
+        <command_interface name="position"/>
+        <state_interface name="position">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+      </joint>
+
+      <joint name="joint_5">
+        <command_interface name="position"/>
+        <state_interface name="position">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+      </joint>
     </ros2_control>
+
+    <ros2_control name="Gripper" type="system">
+      <hardware>
+        <plugin>mock_components/GenericSystem</plugin>
+      </hardware>
+      <joint name="joint_6">
+        <command_interface name="position" />
+        <state_interface name="position">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+      </joint>
+    </ros2_control>
+  </xacro:unless>
 </robot>

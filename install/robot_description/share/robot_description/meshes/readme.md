@@ -1,1 +1,1 @@
-meshes to be used with lesson 1
+/home/tyrhaton/Projects/les_ws/src/robot_description/meshes/readme.md
