@@ -16,7 +16,7 @@ set(_robot_moveit_config_CONFIG_INCLUDED TRUE)
 
 # output package information
 if(NOT robot_moveit_config_FIND_QUIETLY)
-  message(STATUS "Found robot_moveit_config: 0.0.0 (${robot_moveit_config_DIR})")
+  message(STATUS "Found robot_moveit_config: 0.3.0 (${robot_moveit_config_DIR})")
 endif()
 
 # warn when using a deprecated package
