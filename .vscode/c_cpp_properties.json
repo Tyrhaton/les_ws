@@ -3,5 +3,19 @@
     "/opt/ros/jazzy/include/**",
     "/home/tyrhaton/Projects/les_ws/install/my_interfaces/include/**",
     "/usr/include/**"
-  ]
+  ],
+  "configurations": [
+    {
+      "name": "linux-gcc-x64",
+      "includePath": [
+        "${workspaceFolder}/**"
+      ],
+      "defines": [],
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "${default}",
+      "cppStandard": "${default}",
+      "intelliSenseMode": "linux-gcc-x64"
+    }
+  ],
+  "version": 4
 }
